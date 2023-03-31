@@ -1,5 +1,5 @@
 import Link from 'next/link';
-import Login from './auth/Login';
+import Login from '../log/Login';
 
 export default async function Nav() {
   return (
