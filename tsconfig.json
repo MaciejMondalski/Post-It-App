@@ -28,8 +28,8 @@
     "**/*.ts",
     "**/*.tsx",
     ".next/types/**/*.ts",
-    "app/api/hello/auth/[...nextauth].js",
-    "app/layout.tsx"
+    "pages/api/auth/[...nextauth].js",
+    "app/layout.jsx"
   ],
   "exclude": ["node_modules"]
 }
