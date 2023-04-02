@@ -29,7 +29,8 @@
     "**/*.tsx",
     ".next/types/**/*.ts",
     "pages/api/auth/[...nextauth].js",
-    "app/layout.jsx"
+    "app/layout.jsx",
+    "prisma/client.js"
   ],
   "exclude": ["node_modules"]
 }
