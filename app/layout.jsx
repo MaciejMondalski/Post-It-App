@@ -1,5 +1,5 @@
 import './globals.css';
-import Nav from './navigation/Nav';
+import Nav from './authentication/Nav';
 
 // Head metadata
 export const metadata = {
