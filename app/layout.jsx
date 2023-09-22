@@ -1,6 +1,7 @@
 import "./globals.css";
 import Nav from "./authentication/Nav";
 import { Roboto } from "next/font/google";
+import QueryWrapper from "./authentication/QueryWapper";
 
 // Subsets are really important. CHECK BELOW FOR MORE INFO
 // const poppins = Poppins({ subsets: ["latin"], weight: ["400", "700"] });
@@ -19,9 +20,11 @@ export const metadata = {
 export default function RootLayout({ children }) {
   return (
     <html lang="en">
-      <body className={`bg-blue-50 mx-4 md:mx-48 xl:mx-96 ${roboto.className} `}>
-        <Nav />
-        {children}
+      <body className={`bg-gray-50 mx-4 md:mx-48 xl:mx-96 ${roboto.className} `}>
+        <QueryWrapper>
+          <Nav />
+          {children}
+        </QueryWrapper>
       </body>
     </html>
   );
