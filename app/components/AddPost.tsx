@@ -1,13 +1,33 @@
 "use client";
 
 import { useState } from "react";
+import { useMutation, useQueryClient } from "@tanstack/react-query";
+import axios from "axios";
 
 export default function AddPost() {
   const [title, setTitle] = useState("");
   const [isDisabled, setIsDisabled] = useState(false);
 
+  //Create a post
+  const { mutate } = useMutation(async (title: string) => await axios.post("/api/posts/addPost", { title }), {
+    onError: (error: any) => {
+      console.log(error);
+    },
+    onSuccess: (data: any) => {
+      console.log(data);
+      setTitle("");
+      setIsDisabled(false);
+    },
+  });
+
+  const submitPost = async (e: React.FormEvent) => {
+    e.preventDefault();
+    setIsDisabled(true);
+    mutate(title);
+  };
+
   return (
-    <form className="bg-white my-8 p-8 rounded-md">
+    <form onSubmit={submitPost} className="bg-white my-8 p-8 rounded-md">
       <div className="flex flex-col my-4">
         <textarea
           onChange={(e) => setTitle(e.target.value)}
@@ -25,6 +45,7 @@ export default function AddPost() {
           <button
             disabled={isDisabled}
             className="tx-sm bg-teal-600 text-white py-2 px-6 rounded-lg disabled:opacity-25"
+            type="submit"
           >
             Create a post
           </button>
