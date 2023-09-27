@@ -7,7 +7,7 @@ import QueryWrapper from "./authentication/QueryWapper";
 // const poppins = Poppins({ subsets: ["latin"], weight: ["400", "700"] });
 
 const roboto = Roboto({
-  weight: "400", // if single weight, otherwise you use array like [400, 500, 700],
+  weight: ["400", "700", "900"], // if single weight, otherwise you use array like [400, 500, 700],
   style: "normal", // if single style, otherwise you use array like ['normal', 'italic']
   subsets: ["latin"],
 });
@@ -20,7 +20,7 @@ export const metadata = {
 export default function RootLayout({ children }) {
   return (
     <html lang="en">
-      <body className={`bg-gray-50 mx-4 md:mx-48 xl:mx-96 ${roboto.className} `}>
+      <body className={`bg-gray-100 mx-4 md:mx-48 xl:mx-96 ${roboto.className} `}>
         <QueryWrapper>
           <Nav />
           {children}
