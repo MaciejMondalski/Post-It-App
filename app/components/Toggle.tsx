@@ -5,7 +5,7 @@ type ToggleProps = {
   setToggle: (toggle: boolean) => void;
 };
 
-const disableChildClick = (e: React.MouseEvent<HTMLButtonElement, MouseEvent>) => {
+const disableChildClick = (e: React.MouseEvent<HTMLDivElement, MouseEvent>) => {
   e.stopPropagation();
 };
 
