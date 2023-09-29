@@ -2,15 +2,7 @@
 import Image from "next/image";
 import Link from "next/link";
 
-type PostProps = {
-  avatar: string;
-  name?: string;
-  postTitle?: string;
-  id?: string;
-  comments?: string;
-};
-
-export default function Post({ avatar, name, postTitle, id, comments }: PostProps) {
+export default function Post({ avatar, name, postTitle, id, comments }) {
   console.log(comments);
   return (
     <div className="bg-white my-8 p-8 rounded-lg">
@@ -23,7 +15,7 @@ export default function Post({ avatar, name, postTitle, id, comments }: PostProp
       </div>
       <div className="flex gap-4 cursor-pointer items-center">
         <Link href={`/post/${id}`}>
-          <p className="text-sm font-bold text-gray-700">{comments!.length} Comments</p>
+          <p className="text-sm font-bold text-gray-700">{comments?.length}Comments</p>
         </Link>
       </div>
     </div>
