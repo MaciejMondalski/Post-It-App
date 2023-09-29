@@ -18,6 +18,7 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse)
           createdAt: "desc",
         },
       });
+      console.log(data);
       res.status(200).json(data);
     } catch (err) {
       res.status(403).json({ err: "Error fetching posts" });
