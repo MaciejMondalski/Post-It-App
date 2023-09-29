@@ -2,7 +2,15 @@
 import Image from "next/image";
 import Link from "next/link";
 
-export default function Post({ avatar, name, postTitle, id, comments }) {
+type PostProps = {
+  avatar?: string;
+  name?: string;
+  postTitle?: string;
+  id?: string;
+  comments?: string;
+};
+
+export default function Post({ avatar, name, postTitle, id, comments }: PostProps) {
   console.log(comments);
   return (
     <div className="bg-white my-8 p-8 rounded-lg">
